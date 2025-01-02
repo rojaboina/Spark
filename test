@@ -1,1 +1,28 @@
-test
+### **Benefits of Spark Architecture**
+
+- **In-Memory Computation**: Reduces latency and improves performance.
+- **Fault Tolerance**: Automatic recovery using RDD lineage and replication.
+- **Scalability**: Easily handles petabytes of data across thousands of nodes.
+- **Unified Platform**: Supports batch processing, streaming, machine learning, and graph processing.
+
+
+**Driver Program:** The **Driver Program** is the central node in a Spark application that manages and coordinates the execution of tasks.
+
+- Converts user code (written in Spark API) into a **Directed Acyclic Graph (DAG)**.
+- Breaks the DAG into smaller sets of **stages** and tasks.
+- Schedules and distributes tasks to worker nodes.
+
+**Cluster Manager:** Spark relies on a **Cluster Manager** for resource management and task scheduling. Common cluster managers include:
+
+- **Standalone** (Spark's built-in manager).
+- **Apache Mesos**.
+- **Hadoop YARN**.
+- **Kubernetes**.
+- The cluster manager allocates resources (CPU, memory) to Spark applications.
+
+**Executors**
+
+- **Executors** are distributed processes running on worker nodes. Their responsibilities include:
+    - Executing tasks assigned by the driver program.
+    - Storing intermediate data in memory or disk as required.
+    - Reporting task progress and results to the driver.
